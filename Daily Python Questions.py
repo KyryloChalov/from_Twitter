@@ -104,3 +104,10 @@
 # list2 = sorted(list1, key=lambda x: float(x) if x.isdigit() else float('inf'))
 # print(list2)
 # # >>> ['1', '1.0', 'a', '0.1', '-1']
+
+import sys
+import getopt
+sys.argv =['C:\\a.py', '-h', 'word1', 'word2']
+options, arguments = getopt.getopt(sys.argv[1:],'s:t:h')
+print(options)
+print(arguments)
