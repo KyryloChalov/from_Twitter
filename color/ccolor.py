@@ -53,31 +53,28 @@ BOLD = "\33[1m"
 DARK = "\33[2m"
 ITALIC = "\33[3m"
 UNDERLINE = "\33[4m"
-NORMAL = "\33[5m"
+BLINK = "\33[5m"
 NORMAL = "\33[6m"
-BACK = "\33[7m"
+REVERSE = "\33[7m"
 FILL = "\33[8m"
 CROSS = "\33[9m"
 
 
-def color_code(code: str = "0"):
-    return "\33[" + str(code) + "m"
-
-
 def color_print(to_print="", code="", end="\n"):
-    print(f"{color_code(code)}{str(to_print)}{color_code()}|", end=end)
+    print(f"{code}{str(to_print)}{RESET}", end=end)
 
 
 def demo():
     for bc in BACK_COLORS:
         for tc in TEXT_COLORS:
             for st in STYLES:
-                code_str = ";".join((str(bc), str(tc), str(st)))
+                code_str = f'\33[{";".join((str(bc), str(tc), str(st)))}m'
                 color_print(
-                    f"{' ' if bc < 100 else ''}'\\33[{code_str}m'",
+                    f"{' ' if bc < 100 else ''}\\33{code_str[1:]}",
                     code=code_str,
                     end="",
                 )
+                print("|", end="")
             print()
 
 
