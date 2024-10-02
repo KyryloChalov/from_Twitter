@@ -34,12 +34,11 @@ def print_bubbled_array(arr, j=float("inf"), m=float("inf")):  # = 2**31 - 1
             color_print(f" {(arr[j])} ", YELLOW_ON_BLUE)
             color_print(f" {(arr[j+1])} ", BLUE_ON_YELLOW)
 
-        # elif k not in [j, j + 1]:
-        elif all((k!=j, k!=j+1, k<m)):
-            color_print(f" {(arr[k])} ")
-
         elif k >= m:
             color_print(f" {(arr[k])} ", WHITE_ON_BLACK)
+
+        elif all((k!=j, k!=j+1, k<m)):
+            color_print(f" {(arr[k])} ")
 
     print()
 

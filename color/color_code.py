@@ -59,12 +59,33 @@ REVERSE = "\33[7m"
 FILL = "\33[8m"
 CROSS = "\33[9m"
 
+def table_head():
+    print(140 * "-")
+    head_string = [
+        "RESET",
+        "BOLD",
+        "DARK",
+        "ITALIC",
+        "UNDERLINE",
+        "BLINK?",
+        "NORMAL?",
+        "REVERSE",
+        "FILL",
+        "CROSS",
+    ]
+    # print("|")
+    for text in head_string:
+        print(f"{text.center(13, " ")}", end="|")
+    print()
+    print(140 * "-")
+
 
 def color_print(to_print="", code="", end="\n"):
     print(f"{code}{str(to_print)}{RESET}", end=end)
 
 
 def demo():
+    table_head()
     for bc in BACK_COLORS:
         for tc in TEXT_COLORS:
             for st in STYLES:
