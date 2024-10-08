@@ -1,4 +1,4 @@
-BACK_COLORS = [40, 100, 41, 101, 42, 102, 43, 103, 44, 104, 45, 105, 46, 106, 47, 107]
+BACK_COLORS = (40, 100, 41, 101, 42, 102, 43, 103, 44, 104, 45, 105, 46, 106, 47, 107)
 """
 4B - dark, 10B - light
 B:
@@ -21,7 +21,7 @@ LIGHTCYAN_BACK = "\33[106m"
 LIGHTWHITE_BACK = "\33[107m"
 
 
-TEXT_COLORS = [30, 90, 31, 91, 32, 92, 33, 93, 34, 94, 35, 95, 36, 96, 37, 97]
+TEXT_COLORS = (30, 90, 31, 91, 32, 92, 33, 93, 34, 94, 35, 95, 36, 96, 37, 97)
 """
 3T - dark, 9T - light
 T:
@@ -44,7 +44,7 @@ LIGHTCYAN = "\33[96m"
 LIGHTWHITE = "\33[97m"
 
 
-STYLES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+STYLES = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 """
 0 - reset, 1 - bold, 2 - dark, 3 - italics, 4 - underline, 5,6 - normal, 7 - back, 8 - fill, 9 - cross
 """
@@ -59,9 +59,10 @@ REVERSE = "\33[7m"
 FILL = "\33[8m"
 CROSS = "\33[9m"
 
+
 def table_head():
     print(140 * "-")
-    head_string = [
+    head_string = (
         "RESET",
         "BOLD",
         "DARK",
@@ -72,7 +73,7 @@ def table_head():
         "REVERSE",
         "FILL",
         "CROSS",
-    ]
+    )
     # print("|")
     for text in head_string:
         print(f"{text.center(13, " ")}", end="|")

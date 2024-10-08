@@ -59,7 +59,7 @@ cc.color_print("Blue text", cc.BLUE)
 
 bc = 40  # black background only - if you want to see all the options, use cc.demo()
 print(131 * "-")
-head_string = ['RESET','BOLD','DARK','ITALIC','UNDERLINE','BLINK?','NORMAL?','REVERSE','FILL','CROSS']
+head_string =('RESET','BOLD','DARK','ITALIC','UNDERLINE','BLINK?','NORMAL?','REVERSE','FILL','CROSS')
 for text in head_string:
     print(f'|{text.center(12, ' ')}', end='')
 print('|')
