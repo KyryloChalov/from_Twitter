@@ -1,12 +1,12 @@
 from rembg import remove
 from PIL import Image
 input_path = 'graphs/20230620_091912.jpg'
-output_path = '20230620_091912.png'
+# input_path = 'graphs/6_5x9_2_1.png'
+# input_path = 'graphs/6x9_c.png'
 inp = Image.open(input_path)
 inp.show()
-# display(inp)
+
+output_path = 'output_.png'
 output = remove(inp)
 output.show()
-output.save = (output_path)
-# Image.open(output_path)
-# Image.open('620230620_091912__.jpg')
+output.save(output_path)
